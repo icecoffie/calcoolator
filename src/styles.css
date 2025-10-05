@@ -1,0 +1,179 @@
+body {
+  -webkit-font-smoothing: antialiased;
+  font-family: "Segoe UI";
+  text-align: center;
+  margin-top: 100px;
+  background-color: #5095e3;
+  background-image: radial-gradient(
+      at 47% 33%,
+      hsl(206, 77%, 40%) 0,
+      transparent 59%
+    ),
+    radial-gradient(at 60% 65%, hsl(198, 100%, 50%) 0, transparent 55%);
+  background-size: 180% 180%;
+  background-repeat: no-repeat;
+  overflow-x: hidden;
+}
+
+h1 {
+  text-align: center;
+  color: white;
+  font-size: 2.2em;
+  margin-bottom: 20px;
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
+  letter-spacing: 1px;
+}
+
+/* === Animations === */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.fade-in {
+  animation: fadeIn 1s ease-in-out;
+}
+
+.fade-up {
+  animation: fadeUp 1s ease-out;
+}
+
+/* === Calculator === */
+.App {
+  color: white;
+  width: 290px;
+  margin: auto;
+  height: auto;
+  padding: 40px 0;
+  backdrop-filter: blur(16px) saturate(180%);
+  -webkit-backdrop-filter: blur(16px) saturate(180%);
+  background-color: rgba(255, 255, 255, 0.5);
+  border-radius: 7px;
+  border: 1px solid rgba(209, 213, 219, 0.4);
+  box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.15);
+  transition: transform 0.3s ease;
+}
+
+.App:hover {
+  transform: scale(1.01);
+}
+
+/* Screen */
+#resultScreen {
+  background-color: rgba(44, 154, 238, 0.9);
+  border: 1px solid rgba(209, 213, 219, 0.4);
+  width: 66%;
+  height: 40px;
+  overflow: hidden;
+  margin: auto;
+  vertical-align: 50%;
+  border-radius: 7px;
+  padding: 0.3em;
+  font-size: 2em;
+  text-align: right;
+  color: white;
+}
+
+/* Buttons */
+.calcBtns {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 55px;
+}
+
+button {
+  padding-top: 1px !important;
+  padding-bottom: 1px !important;
+  width: 50px;
+  height: 50px;
+  margin-right: 5px;
+  border: 0px solid;
+  border-radius: 8px;
+  background-color: rgb(212, 254, 255, 0.8);
+  color: rgb(0, 45, 128);
+  font-weight: 500;
+  cursor: pointer;
+  font-size: 1em;
+  backdrop-filter: blur(16px) saturate(180%);
+  -webkit-backdrop-filter: blur(16px) saturate(180%);
+  transition: all 0.2s ease;
+}
+
+button:hover {
+  filter: opacity(90%);
+  transform: scale(0.95);
+}
+
+/* last button each row */
+button:nth-last-child(1) {
+  background-color: rgba(0, 104, 230, 0.9);
+  color: whitesmoke;
+}
+
+/* first row only */
+#firstRow {
+  margin-top: 20px;
+}
+
+#firstRow button {
+  background-color: rgba(0, 119, 230, 0.9);
+  color: white;
+}
+
+#firstRow button:nth-child(2),
+#firstRow button:nth-child(1) {
+  background-color: rgb(80, 90, 80, 0.5);
+  color: white;
+}
+
+/* bigger 0 button */
+#bigZero {
+  width: 105px;
+  height: 50px;
+  margin-right: 5px;
+  border: 0px solid;
+  border-radius: 10px;
+  background-color: rgb(212, 254, 255, 0.8);
+  color: teal;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+#bigZero:hover {
+  transform: scale(0.95);
+}
+
+/* Footer */
+footer {
+  margin-top: 25px;
+  color: white;
+  font-size: 0.9em;
+  letter-spacing: 0.5px;
+}
+
+footer a {
+  color: #fefefe;
+  text-decoration: underline;
+  transition: color 0.3s ease;
+}
+
+footer a:hover {
+  color: #c7e6ff;
+}
